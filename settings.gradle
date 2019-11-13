@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':apt-processor', ':apt-sdk', ':apt-annotation'
 rootProject.name='Android-Apt-Demo'
