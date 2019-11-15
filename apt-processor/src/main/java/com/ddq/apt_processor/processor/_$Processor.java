@@ -59,7 +59,7 @@ public class _$Processor extends AbstractProcessor {
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         factoryMap.clear();
         Set<? extends Element> temp  = roundEnv.getElementsAnnotatedWith(Bind.class);
-        //存储id
+        //存储控件的id
         for (Element e : temp) {
             VariableElement ve = (VariableElement) e;
             TypeElement te = (TypeElement) ve.getEnclosingElement();
@@ -73,7 +73,7 @@ public class _$Processor extends AbstractProcessor {
             int id = bindAnnotation.value();
             tempFactory.putElement(id,ve);
         }
-        //生成java文件
+        //生成java文件，生成绑定代码
         for (String key : factoryMap.keySet()) {
             _$CreateFactory cf = factoryMap.get(key);
             JavaFile jf = JavaFile.builder(cf.getPackageName(),cf.generateClassCodeWithJavapoet())
