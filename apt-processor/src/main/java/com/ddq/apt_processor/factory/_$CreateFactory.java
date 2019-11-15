@@ -47,7 +47,7 @@ public class _$CreateFactory {
     private MethodSpec generateMethodCodeWithJavapoet(){
         ClassName cn = ClassName.bestGuess(te.getQualifiedName().toString());
         MethodSpec.Builder ms = MethodSpec.methodBuilder("bind")
-                .addModifiers(Modifier.PUBLIC)
+                .addModifiers(Modifier.PUBLIC,Modifier.STATIC)
                 .addParameter(cn,"owner")
                 .returns(void.class);
         for (int id : variableElementMap.keySet()) {

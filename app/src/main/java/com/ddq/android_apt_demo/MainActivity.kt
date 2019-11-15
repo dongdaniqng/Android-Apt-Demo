@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //MainActivity_AutoGenerate.bind(this)
         _Api.bind(this)
-
         textView.text = "666"
     }
 }
